@@ -10,7 +10,7 @@ import os
 
 load_dotenv()
 
-producer = Producer("topic_news", "localhost:9092")
+producer = Producer("topic-1", "localhost:9092")
 
 app = FastAPI()
 
@@ -18,7 +18,7 @@ print("Connected to kafka")
 enddate = date.today()
 startdate = date.today() - timedelta(days=1)
 
-config = OmegaConf.load("C:\Dev\kafka-demo\config.yml")
+config = OmegaConf.load("<path>\config.yml")
 topic = config["NewsAPI"]["topic"]
 api_key = os.getenv("NEWS_API_KEY")
 

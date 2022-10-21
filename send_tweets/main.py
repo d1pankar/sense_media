@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 from producer import Producer
-from fastapi import FastAPI
+from omegaconf import OmegaConf
 import tweepy
 import os
 
@@ -8,6 +8,9 @@ load_dotenv()
 bearer_token = os.getenv("BEARER_TOKEN")
 
 producer = Producer("topic-2", "localhost:9092")
+
+config = OmegaConf.load("<path>\config.yml")
+topic = config["TwitterAPI"]["topic"]
 
 
 class TweetStream(tweepy.StreamingClient):
@@ -33,7 +36,7 @@ class TweetStream(tweepy.StreamingClient):
 
 
 def main():
-    query = "lgbtq lang:en -is:retweet"
+    query = f"{topic} lang:en -is:retweet"
     stream = TweetStream(bearer_token)
     prev_id = stream.get_rules().data[0].id
     print(stream.get_rules())
