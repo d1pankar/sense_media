@@ -30,7 +30,7 @@ model = Model()
 def get_data():
     try:
 
-        news_consumer = Consumer("topic-1", "localhost:9092")
+        news_consumer = Consumer("topic_news", "localhost:9092")
         messages = news_consumer.consume()
 
         for msg in messages:

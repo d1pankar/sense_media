@@ -10,7 +10,7 @@ import os
 
 load_dotenv()
 
-producer = Producer("topic-1", "localhost:9092")
+producer = Producer("topic_news", "localhost:9092")
 
 app = FastAPI()
 

@@ -15,7 +15,7 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181  
-      KAFKA_CREATE_TOPICS: "topic-1:2:2, topic-2:2:2"
+      KAFKA_CREATE_TOPICS: "topic_news:2:2"
     depends_on:
       - zookeeper
 
