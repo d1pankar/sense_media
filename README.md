@@ -14,6 +14,7 @@ A real-time analytics program for detection of Hate speech on social media and a
 
 
 
+
 ## The Goal
 The idea is to detect hate-speech against individual, community, organization, company on social media and use the data for a better visual representation for analytics. 
 
